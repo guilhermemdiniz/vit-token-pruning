@@ -1,0 +1,34 @@
+experiment:
+  name: optuna_tuning
+  seed: 42
+
+paths:
+  data_dir: ./dataset
+  checkpoint_dir: ./checkpoints
+  results_dir: ./results/optuna_tuning
+
+dataset:
+  image_size: 224
+  num_classes: 102
+  batch_size: 32
+  num_workers: 2
+  download: true
+  augmentation: true
+  random_erasing_p: 0.09852543003845121
+
+model:
+  name: vit_base_patch16_224.augreg_in21k
+  pretrained: true
+
+training:
+  epochs: 30
+  lr: 6.06870627400301e-05
+  weight_decay: 0.007716841118309199
+  label_smoothing: 0.2912737878542151
+  mixup_alpha: 0.8830736738977027
+  early_stopping:
+    enabled: true
+    monitor: val_accuracy
+    mode: max
+    patience: 7
+    min_delta: 0.0

@@ -23,7 +23,7 @@ from utils import (
     EarlyStopping,
 )
 
-DEFAULT_CONFIG_PATH = str(Path(__file__).resolve().parents[1] / "configs" / "baseline.yaml")
+DEFAULT_CONFIG_PATH = str(Path(__file__).resolve().parents[1] / "configs" / "optuna_tuning.yaml")
 
 def train_epoch(model, train_loader, criterion, optimizer, device, mixup_fn=None):
     model.train()
